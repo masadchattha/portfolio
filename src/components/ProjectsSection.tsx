@@ -10,53 +10,123 @@ interface Project {
   appStoreLink?: string;
   githubLink?: string;
   featured: boolean;
+  inDevelopment?: boolean;
 }
 
 const projects: Project[] = [
   {
     id: 1,
-    title: "FitnessTracker Pro",
-    description: "A comprehensive fitness tracking app with workout plans, nutrition tracking, and progress visualization.",
-    image: "https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["Swift", "SwiftUI", "CoreData", "HealthKit"],
-    appStoreLink: "#",
+    title: "Going Solo",
+    description: "A social networking app for solo travelers to match, chat, and build local communities. Features include chat replies, emoji reactions, groups, trip planning, and location-based discovery.",
+    image: "https://images.pexels.com/photos/2422461/pexels-photo-2422461.jpeg",
+    technologies: ["Swift", "UIKit", "Firebase", "MapKit", "CoreLocation"],
+    appStoreLink: "https://apps.apple.com/us/app/going-solo-travel-friends/id1671515758",
     featured: true
   },
   {
     id: 2,
-    title: "MindfulMoments",
-    description: "Meditation and mindfulness app with guided sessions, breathing exercises, and sleep stories.",
-    image: "https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["Swift", "UIKit", "AVFoundation", "CoreAnimation"],
-    appStoreLink: "#",
+    title: "HiiKER",
+    description: "A comprehensive hiking maps app with trail discovery, planning tools, and offline navigation. Features include GPX file support, offline maps, and multi-language support.",
+    image: "https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg",
+    technologies: ["Swift", "MapKit", "CoreLocation", "CoreData"],
+    appStoreLink: "https://apps.apple.com/us/app/hiiker-the-hiking-maps-app/id1470810597",
     featured: true
   },
   {
     id: 3,
-    title: "RecipeVault",
-    description: "A recipe management app with meal planning, shopping lists, and AI-powered recipe suggestions.",
-    image: "https://images.pexels.com/photos/6941027/pexels-photo-6941027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["Swift", "Combine", "CoreML", "Firebase"],
-    appStoreLink: "#",
+    title: "Pryvate Messenger",
+    description: "An ultra-secure communication app with encrypted messaging, voice/video calls, and burner phone capabilities. Features end-to-end encryption and remote data wipe.",
+    image: "https://images.pexels.com/photos/5053740/pexels-photo-5053740.jpeg",
+    technologies: ["Swift", "Linphone SDK", "Encryption", "VoIP"],
+    appStoreLink: "https://apps.apple.com/us/app/pryvate-messenger/id914948581",
     featured: true
   },
   {
     id: 4,
-    title: "TravelBuddy",
-    description: "An all-in-one travel companion with itinerary planning, local recommendations, and offline maps.",
-    image: "https://images.pexels.com/photos/3769138/pexels-photo-3769138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["Swift", "MapKit", "CoreLocation", "CloudKit"],
+    title: "Officetree",
+    description: "A business communication app providing professional calling, texting, and multi-account management using PlivoVoiceKit for VoIP functionality.",
+    image: "https://images.pexels.com/photos/3182833/pexels-photo-3182833.jpeg",
+    technologies: ["Swift", "PlivoVoiceKit", "CoreTelephony", "CallKit"],
+    appStoreLink: "https://apps.apple.com/us/app/officetree-phone/id6444354321",
+    featured: true
+  },
+  {
+    id: 5,
+    title: "Reizor",
+    description: "A next-gen 360° video platform for immersive VR experiences, featuring 8K live streaming and 6K recordings with interactive social features.",
+    image: "https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg",
+    technologies: ["Swift", "AVFoundation", "SceneKit", "WebRTC"],
+    appStoreLink: "https://apps.apple.com/us/app/reizor/id6469035345",
+    featured: true
+  },
+  {
+    id: 6,
+    title: "1st-Response",
+    description: "A specialized audio dictation app for emergency response professionals with secure cloud sync and optimized audio compression.",
+    image: "https://images.pexels.com/photos/2182981/pexels-photo-2182981.jpeg",
+    technologies: ["Swift", "AVFoundation", "CloudKit", "CoreAudio"],
+    appStoreLink: "https://apps.apple.com/us/app/1st-response/id1663503501",
+    featured: true
+  },
+  {
+    id: 7,
+    title: "Taparoo",
+    description: "A modern POS system enabling seamless Tap-to-Pay and terminal transactions. Developed Tap-to-Pay on iPhone functionality for contactless credit/debit card payments with optimized transaction flows.",
+    image: "https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg",
+    technologies: ["Swift", "PassKit", "CoreNFC", "Security"],
     appStoreLink: "#",
-    featured: false
+    featured: false,
+    inDevelopment: true
+  },
+  {
+    id: 8,
+    title: "Cake Companion",
+    description: "An inventory management system for automated retail vending solutions. Features barcode-scanning inventory system with machine-specific product allocation and real-time sync.",
+    image: "https://images.pexels.com/photos/6287295/pexels-photo-6287295.jpeg",
+    technologies: ["SwiftUI", "CoreData", "AVFoundation", "Networking"],
+    appStoreLink: "#",
+    featured: false,
+    inDevelopment: true
+  },
+  {
+    id: 9,
+    title: "CakeBox POS",
+    description: "A specialized point-of-sale system for bakeries with integrated inventory management. Built with Swift/SwiftUI for intuitive cake sales and inventory workflows.",
+    image: "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg",
+    technologies: ["SwiftUI", "Medusa", "Charts", "CoreData"],
+    appStoreLink: "#",
+    featured: false,
+    inDevelopment: true
+  },
+  {
+    id: 10,
+    title: "Pay4Money",
+    description: "A crypto payment solution enabling QR/NFC transactions with vendor discovery. Features secure crypto payments, real-time vendor location services, and seamless blockchain transactions.",
+    image: "https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg",
+    technologies: ["Swift", "Web3", "CoreNFC", "MapKit"],
+    appStoreLink: "#",
+    featured: false,
+    inDevelopment: true
   }
 ];
 
 const ProjectsSection: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<'all' | 'featured'>('all');
+  const [activeFilter, setActiveFilter] = useState<'all' | 'featured'>('featured');
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
   
   const filteredProjects = activeFilter === 'all' 
     ? projects 
     : projects.filter(project => project.featured);
+
+  const handleAppStoreClick = (project: Project, e: React.MouseEvent) => {
+    if (project.inDevelopment) {
+      e.preventDefault();
+      setPopupMessage(`${project.title} is currently in development. Stay tuned for the release!`);
+      setShowPopup(true);
+      setTimeout(() => setShowPopup(false), 3000);
+    }
+  };
 
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-900">
@@ -69,16 +139,6 @@ const ProjectsSection: React.FC = () => {
           
           <div className="mt-8 flex justify-center space-x-4">
             <button 
-              onClick={() => setActiveFilter('all')} 
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeFilter === 'all' 
-                  ? 'bg-blue-500 text-white' 
-                  : 'bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700'
-              }`}
-            >
-              All Projects
-            </button>
-            <button 
               onClick={() => setActiveFilter('featured')} 
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeFilter === 'featured' 
@@ -88,8 +148,25 @@ const ProjectsSection: React.FC = () => {
             >
               Featured
             </button>
+            <button 
+              onClick={() => setActiveFilter('all')} 
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                activeFilter === 'all' 
+                  ? 'bg-blue-500 text-white' 
+                  : 'bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700'
+              }`}
+            >
+              All Projects
+            </button>
           </div>
         </div>
+        
+        {/* Popup Notification */}
+        {showPopup && (
+          <div className="fixed top-24 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in-down">
+            {popupMessage}
+          </div>
+        )}
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
@@ -100,6 +177,11 @@ const ProjectsSection: React.FC = () => {
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
+                {project.inDevelopment && (
+                  <div className="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
+                    In Development
+                  </div>
+                )}
               </div>
               
               <div className="p-6">
@@ -118,11 +200,12 @@ const ProjectsSection: React.FC = () => {
                   {project.appStoreLink && (
                     <a 
                       href={project.appStoreLink} 
+                      onClick={(e) => handleAppStoreClick(project, e)}
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 flex items-center"
                     >
-                      <ExternalLink size={16} className="mr-1" /> App Store
+                      <ExternalLink size={16} className="mr-1" /> View in App Store
                     </a>
                   )}
                   
