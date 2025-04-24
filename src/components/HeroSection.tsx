@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDownCircle } from 'lucide-react';
+import { ArrowDownCircle, Download } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   return (
@@ -38,6 +38,14 @@ const HeroSection: React.FC = () => {
                   className="btn-secondary"
                 >
                   Get In Touch
+                </a>
+                <a 
+                  href="/documents/cv.pdf" 
+                  download="Muhammad_Asad_Sr_iOS_Developer_CV.pdf"
+                  className="btn-secondary flex items-center gap-2"
+                >
+                  <Download size={20} />
+                  Download CV
                 </a>
               </div>
             </div>
