@@ -107,17 +107,6 @@ const Footer: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-400 text-sm">
               © {new Date().getFullYear()} - All rights reserved
             </p>
-            <div className="mt-4 md:mt-0 flex space-x-6">
-              <a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Cookie Policy
-              </a>
-            </div>
           </div>
         </div>
       </div>
