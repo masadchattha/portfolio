@@ -1,35 +1,121 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const ContactSection: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    date: '',
+    address: ''
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const getLocationFromTimezone = (): string => {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (!timeZone) return "Unknown Location";
+    
+    // Special handling for Pakistan
+    if (timeZone === "Asia/Karachi") {
+      return "Lahore, Pakistan";  // Since you're in Lahore
+    }
+    
+    const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+    const parts = timeZone.split('/');
+    if (parts.length < 2) return parts[0];
+    
+    // Get city and continent
+    const city = parts[parts.length - 1].replace(/_/g, ' ');
+    
+    // Try to get country name from timezone
+    try {
+      // Extract country code from timezone and convert to country name
+      const countryCode = timeZone.split('/')[1];
+      if (countryCode && countryCode.length === 2) {
+        const country = regionNames.of(countryCode.toUpperCase());
+        return `${city}, ${country}`;
+      }
+    } catch (e) {
+      console.debug('Could not determine country from timezone');
+    }
+    
+    // Fallback to city and continent if country detection fails
+    return `${city}, ${parts[0]}`;
+  };
+  
+  const formatDate = (date: Date): string => {
+    const months = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    
+    const timeZoneAbbr = new Date()
+      .toLocaleTimeString('en-US', { timeZoneName: 'short' })
+      .split(' ')[2];
+    
+    return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()} at ${date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })} (${timeZoneAbbr})`;
+  };
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      if (form.current) {
+        // Get current date and location
+        const formattedDate = formatDate(new Date());
+        const userLocation = getLocationFromTimezone();
+        
+        // Add hidden inputs before sending
+        const dateInput = document.createElement('input');
+        dateInput.type = 'hidden';
+        dateInput.name = 'date';
+        dateInput.value = formattedDate;
+        form.current.appendChild(dateInput);
+        
+        const addressInput = document.createElement('input');
+        addressInput.type = 'hidden';
+        addressInput.name = 'address';
+        addressInput.value = userLocation;
+        form.current.appendChild(addressInput);
+        
+        await emailjs.sendForm(
+          'service_portfolio',
+          'template_5vmuowg',
+          form.current,
+          'UuFcWfx_5WsieXEtJ'
+        );
+        
+        // Remove the temporary inputs
+        form.current.removeChild(dateInput);
+        form.current.removeChild(addressInput);
+        
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '', date: '', address: '' });
+        
+        // Reset submission state after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
+      }
+    } catch (err) {
+      setError('Failed to send message. Please try again later.');
+      console.error('EmailJS Error:', err);
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Reset submission state after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+    }
   };
 
   return (
@@ -121,6 +207,12 @@ const ContactSection: React.FC = () => {
               
               <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white relative z-10">Send Message</h3>
               
+              {error && (
+                <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-6 text-red-800 dark:text-red-400">
+                  <p className="font-medium">{error}</p>
+                </div>
+              )}
+              
               {isSubmitted ? (
                 <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 flex items-center text-green-800 dark:text-green-400">
                   <div className="mr-3 bg-green-100 dark:bg-green-800 rounded-full p-1">
@@ -134,7 +226,7 @@ const ContactSection: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="relative z-10">
+                <form ref={form} onSubmit={handleSubmit} className="relative z-10">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
