@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
       <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-pink-400 dark:bg-pink-600 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
       
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex flex-col-reverse lg:flex-row items-center">
           <div className="lg:w-1/2 mb-12 lg:mb-0">
             <div className="max-w-xl mx-auto lg:mx-0">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
@@ -51,12 +51,12 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="lg:w-1/2 flex justify-center">
+          <div className="lg:w-1/2 flex justify-center mb-8 lg:mb-0">
             <div className="relative w-full max-w-md">
               <img 
                 src="/images/asad.jpg" 
                 alt="Muhammad Asad" 
-                className="rounded-full w-64 h-64 object-cover mx-auto border-4 border-blue-500 shadow-xl"
+                className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover mx-auto border-4 border-blue-500 shadow-xl"
               />
               
               {/* Decorative elements */}
@@ -66,7 +66,7 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
         
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="hidden sm:block absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a href="#projects" className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             <ArrowDownCircle size={32} />
           </a>
