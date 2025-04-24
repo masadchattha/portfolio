@@ -16,24 +16,24 @@ const testimonials: Testimonial[] = [
     name: "Jonathan Parker-Bray",
     role: "Director",
     company: "Pryvate Technologies Ltd",
-    text: "Working with this developer was an absolute pleasure. They delivered our fitness app ahead of schedule and exceeded all our expectations. The app's performance and design are outstanding.",
-    avatar: "/jonathan.jpg"
+    text: "Working with this developer was an absolute pleasure. They delivered our communication app 'Pryvate Messenger' ahead of schedule and exceeded all our expectations. The app's performance and design are outstanding.",
+    avatar: "/images/jonathan.jpg"
   },
   {
     id: 2,
-    name: "Michael Chang",
-    role: "CEO",
-    company: "StartupX",
-    text: "This developer transformed our concept into a polished iOS app that our users love. Their attention to detail and deep understanding of the iOS platform made all the difference.",
-    avatar: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    name: "Gordon Seay",
+    role: "Director",
+    company: "Officetree Corporation",
+    text: "This developer transformed our concept into a polished iOS app 'Officetree' that our users love. Their attention to detail and deep understanding of the iOS platform made all the difference.",
+    avatar: "/images/gordon.jpeg"
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    role: "Creative Director",
-    company: "Design Studio Inc.",
-    text: "Exceptional technical skills combined with an eye for design. Our app not only functions flawlessly but looks beautiful. The animations and transitions created make the experience truly special.",
-    avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    name: "Ashley Pokorski",
+    role: "Founder CEO",
+    company: "Going Solo",
+    text: "Exceptional technical skills combined with an eye for design. Our Going Solo app not only functions flawlessly but looks beautiful. The animations and transitions created make the experience truly special.",
+    avatar: "/images/ashley.png"
   }
 ];
 
