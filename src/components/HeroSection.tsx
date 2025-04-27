@@ -54,7 +54,7 @@ const HeroSection: React.FC = () => {
           <div className="lg:w-1/2 flex justify-center mb-8 lg:mb-0">
             <div className="relative w-full max-w-md">
               <img 
-                src="/portfolio/images/asad.jpg" 
+                src="/images/asad.jpg" 
                 alt="Muhammad Asad" 
                 className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover mx-auto border-4 border-blue-500 shadow-xl"
               />
