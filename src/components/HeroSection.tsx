@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
                   Get In Touch
                 </a>
                 <a 
-                  href="/documents/cv.pdf" 
+                  href={`${import.meta.env.BASE_URL}documents/cv.pdf`} 
                   download="Muhammad_Asad_Sr_iOS_Developer_CV.pdf"
                   className="btn-secondary flex items-center gap-2"
                 >
@@ -54,7 +54,7 @@ const HeroSection: React.FC = () => {
           <div className="lg:w-1/2 flex justify-center mb-8 lg:mb-0">
             <div className="relative w-full max-w-md">
               <img 
-                src="/images/asad.jpg" 
+                src={`${import.meta.env.BASE_URL}images/asad.jpg`} 
                 alt="Muhammad Asad" 
                 className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover mx-auto border-4 border-blue-500 shadow-xl"
               />
