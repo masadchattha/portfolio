@@ -41,7 +41,7 @@ function App() {
 
   // Update title
   useEffect(() => {
-    document.title = "Muhammad Asad - iOS Developer Portfolio";
+    document.title = "Muhammad Asad - Sr. iOS Developer";
   }, []);
 
   return (
