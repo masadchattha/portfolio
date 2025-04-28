@@ -18,7 +18,7 @@ const projects: Project[] = [
     id: 1,
     title: "Going Solo",
     description: "A social networking app for solo travelers to match, chat, and build local communities. Features include chat replies, emoji reactions, groups, trip planning, and location-based discovery.",
-    image: "https://images.pexels.com/photos/2422461/pexels-photo-2422461.jpeg",
+    image: "images/goingSolo.png",
     technologies: ["Swift", "UIKit", "Firebase", "MapKit", "CoreLocation", "WebSocket", "In-App Purchase", "AdMob"],
     appStoreLink: "https://apps.apple.com/us/app/going-solo-travel-friends/id1671515758",
     featured: true
@@ -27,7 +27,7 @@ const projects: Project[] = [
     id: 2,
     title: "HiiKER",
     description: "A comprehensive hiking maps app with trail discovery, planning tools, and offline navigation. Features include GPX file support, offline maps, and multi-language support.",
-    image: "https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg",
+    image: "images/hiiker.png",
     technologies: ["Swift", "MapKit", "CoreLocation", "CoreData", "In-App Purchase", "Offline Maps", "GraphQL", "Localization"],
     appStoreLink: "https://apps.apple.com/us/app/hiiker-the-hiking-maps-app/id1470810597",
     featured: true
@@ -36,7 +36,7 @@ const projects: Project[] = [
     id: 3,
     title: "Pryvate Messenger",
     description: "An ultra-secure communication app with encrypted messaging, voice/video calls, and burner phone capabilities. Features end-to-end encryption and remote data wipe.",
-    image: "https://images.pexels.com/photos/5053740/pexels-photo-5053740.jpeg",
+    image: "images/pryvate.png",
     technologies: ["Swift", "Objective-C", "Linphone SDK", "Encryption", "VoIP", "Apple Pay", "PayPal", "In-App Purchase", "Offnet Calling"],
     appStoreLink: "https://apps.apple.com/us/app/pryvate-messenger/id914948581",
     featured: true
@@ -45,7 +45,7 @@ const projects: Project[] = [
     id: 4,
     title: "Officetree",
     description: "A business communication app providing professional calling, texting, and multi-account management using PlivoVoiceKit for VoIP functionality.",
-    image: "https://images.pexels.com/photos/3182833/pexels-photo-3182833.jpeg",
+    image: "images/officetree.png",
     technologies: ["Swift", "UIKit", "PlivoVoiceKit", "CoreTelephony", "CallKit", "VoIP", "Bluetooth"],
     appStoreLink: "https://apps.apple.com/us/app/officetree-phone/id6444354321",
     featured: true
@@ -54,7 +54,7 @@ const projects: Project[] = [
     id: 5,
     title: "Reizor",
     description: "A next-gen 360° video platform for immersive VR experiences, featuring 8K live streaming and 6K recordings with interactive social features.",
-    image: "https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg",
+    image: "images/reizor.png",
     technologies: ["Swift", "UIKit", "AVFoundation", "SceneKit", "WebRTC", "360° Video Player"],
     appStoreLink: "https://apps.apple.com/us/app/reizor/id6469035345",
     featured: true
@@ -63,7 +63,7 @@ const projects: Project[] = [
     id: 6,
     title: "1st-Response",
     description: "A specialized audio dictation app for emergency response professionals with secure cloud sync and optimized audio compression.",
-    image: "https://images.pexels.com/photos/2182981/pexels-photo-2182981.jpeg",
+    image: "images/1st-response.png",
     technologies: ["Swift", "UIKit", "AVFoundation", "AWS", "CoreAudio"],
     appStoreLink: "https://apps.apple.com/us/app/1st-response/id1663503501",
     featured: true
