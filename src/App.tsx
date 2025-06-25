@@ -4,7 +4,7 @@ import HeroSection from './components/HeroSection';
 import ProjectsSection from './components/ProjectsSection';
 import SkillsSection from './components/SkillsSection';
 import AboutSection from './components/AboutSection';
-import TestimonialsSection from './components/TestimonialsSection';
+// import TestimonialsSection from './components/TestimonialsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import './styles.css';
@@ -51,7 +51,7 @@ function App() {
       <ProjectsSection />
       <SkillsSection />
       <AboutSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <ContactSection />
       <Footer />
     </div>
